@@ -1,0 +1,29 @@
+# Initialise
+units		real	                             #Angstroms, g/mol, etc.
+atom_style	atomic                                 #Molecule + charge
+
+boundary        p p p				     #Periodic Boundaries
+read_data       ./data.lmp
+
+replicate	1 1 1				     #cell replication (none = 1 1 1)
+
+################################# POTENTIAL #########################################
+
+pair_style hdnnp 6.36 dir "/path/to/model/directory" showew no cflength 1.8897261328 cfenergy 0.0015936010974213599 showewsum 1000 maxew 10000000
+pair_coeff * * H C O
+
+
+################################### ENSEMBLE ##########################################
+
+#Output Style
+variable        tot_time equal 100000000
+
+thermo          1
+thermo_style    custom step epair temp lx ly lz pxx pyy pzz press
+
+######################################################################################
+
+fix 1 all ipi nid004968 11121 inet
+
+#Run it!
+run             ${tot_time}
