@@ -5,7 +5,7 @@ This repository contains supplementary data supporting the findings of the paper
 
 ## Contents
 * `example_input_remd`: Input files for performing REMD across differing pressures using NNP as force generator.
-- figures: scripts for reproducing manuscript figures.
-- model: NNP data for performing NNP-MD.
+* `figures`: scripts for reproducing manuscript figures.
+* `model`: NNP data for performing NNP-MD.
 
 
