@@ -53,13 +53,13 @@ ax.scatter(georgiadis[0],georgiadis[1],marker='p',facecolors='none',edgecolors='
 ax.scatter(bachu[0],bachu[1],marker='x',color='orange',
           label='Bachu et al. (298.15 K)')
 ax.scatter(chun[0],chun[1],marker='^',facecolors='none',edgecolors='violet',
-          label='Chun et al. (298.15 K)')
+          label='Chun et al. (303.15 K)')
 ax.scatter(hebach[0],hebach[1],marker='s',facecolors='none',edgecolors='purple',
           label='Hebach et al. (298.3 K)')
 ax.scatter(tewes[0],tewes[1],facecolors='none',edgecolors='lightblue',
-          label='Tewes et al. (293.0 K)')
+          label='Tewes et al. (293.15 K)')
 ax.scatter(hinton[0],hinton[1],marker='h',facecolors='none',edgecolors='black',
-          label='Hinton et al. (295.5 K)')
+          label='Hinton et al. (295.65 K)')
 
 # computational data
 ax.plot(lower_x,lower_y, '--',color='red',label='Shiga et al. (313.0 K)',linewidth=0.8)
@@ -93,4 +93,5 @@ ax.set_xlim(-10,520)
 ax.set_ylim(10,85)
 ax.legend()
 ax.grid(ls='--',alpha=0.5)
+plt.savefig(f'./isotherm_BLYP.pdf',dpi=800,bbox_inches='tight',facecolor=fig.get_facecolor(), edgecolor='none')
 plt.show()
